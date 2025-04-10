@@ -5,10 +5,10 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install dependencies
-RUN "apk add --no-cache \
+RUN apk add --no-cache \
     ca-certificates \
     wget \
-    tzdata"
+    tzdata
 
 # Set environment variables
 ENV HBOX_MODE=production
