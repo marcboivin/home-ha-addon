@@ -20,3 +20,15 @@ configuration:
   timezone:
     name: Timezone
     description: Set the timezone for date handling (e.g., UTC, America/New_York)
+  create_admin_user:
+    name: Create Admin User
+    description: Create an admin user with specified credentials on startup
+  admin_username:
+    name: Admin Username
+    description: Username for the admin user (used when Create Admin User is enabled)
+  admin_password:
+    name: Admin Password
+    description: Password for the admin user (used when Create Admin User is enabled)
+  admin_email:
+    name: Admin Email
+    description: Email for the admin user (used when Create Admin User is enabled)

@@ -31,6 +31,10 @@ options:
   asset_id_prefix: ""
   allow_analytics: false
   timezone: "UTC"
+  create_admin_user: false
+  admin_username: "admin"
+  admin_password: ""
+  admin_email: ""
 schema:
   allow_registration: bool
   database_path: str
@@ -39,3 +43,7 @@ schema:
   asset_id_prefix: str?
   allow_analytics: bool
   timezone: str
+  create_admin_user: bool
+  admin_username: str?
+  admin_password: str?
+  admin_email: str?

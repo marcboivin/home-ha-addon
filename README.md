@@ -34,6 +34,10 @@ Homebox is a home inventory management system designed to help you keep track of
 | asset_id_prefix | Optional prefix for asset IDs |
 | allow_analytics | Enable/disable anonymous analytics |
 | timezone | Set the timezone for date handling |
+| create_admin_user | Create an admin user with specified credentials on startup |
+| admin_username | Username for the admin user (when create_admin_user is true) |
+| admin_password | Password for the admin user (when create_admin_user is true) |
+| admin_email | Email for the admin user (when create_admin_user is true) |
 
 ### Example Configuration
 
@@ -47,6 +51,10 @@ auto_increment_asset_id: true
 asset_id_prefix: "HB-"
 allow_analytics: false
 timezone: "America/New_York"
+create_admin_user: false
+admin_username: "admin"
+admin_password: "securepassword"
+admin_email: "admin@example.com"
 ```
 
 This configuration:
@@ -55,12 +63,16 @@ This configuration:
 - Uses automatic asset ID generation with a "HB-" prefix (e.g., HB-001, HB-002)
 - Disables anonymous analytics
 - Sets the timezone to Eastern Time (EST/EDT)
+- Does not create an admin user automatically (set create_admin_user to true to enable)
+- Specifies default admin credentials that will be used if admin user creation is enabled
 
 The `/share` directory in Home Assistant is ideal for persistent data storage as it's preserved during backups and updates. All file attachments, images, and data will be stored here.
 
 ## First Steps
 
-1. On first launch, register a new account (if registration is enabled).
+1. On first launch:
+   - If you've enabled admin user creation, the system will create an admin account using your specified credentials.
+   - Otherwise, register a new account manually (if registration is enabled).
 2. Login with your credentials.
 3. Start organizing your items by creating locations and adding items.
 
