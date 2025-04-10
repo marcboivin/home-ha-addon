@@ -1,0 +1,22 @@
+configuration:
+  allow_registration:
+    name: Allow Registration
+    description: Enable or disable user registration
+  database_path:
+    name: Database Path
+    description: Path to the SQLite database file
+  storage_path:
+    name: Storage Path
+    description: Directory to store Homebox data, attachments, and files
+  auto_increment_asset_id:
+    name: Auto-increment Asset ID
+    description: Automatically increment asset IDs for new items
+  asset_id_prefix:
+    name: Asset ID Prefix
+    description: Optional prefix for asset IDs (e.g., HB-)
+  allow_analytics:
+    name: Allow Analytics
+    description: Enable or disable anonymous usage analytics
+  timezone:
+    name: Timezone
+    description: Set the timezone for date handling (e.g., UTC, America/New_York)

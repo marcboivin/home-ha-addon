@@ -1,0 +1,21 @@
+# Logs
+*.log
+
+# Runtime data
+tmp/
+*.tmp
+
+# macOS
+.DS_Store
+
+# Build directories
+.build/
+
+# Environment variables
+.env
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
