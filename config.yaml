@@ -1,6 +1,6 @@
 name: "Homebox"
 description: "Open-source inventory and organization system for your home"
-version: "1.0.0"
+version: "1.0.1"
 slug: "homebox"
 init: false
 arch:
@@ -9,7 +9,7 @@ arch:
   - armhf
   - armv7
   - i386
-url: "https://github.com/hay-kot/homebox"
+url: "https://github.com/sysadminsmedia/homebox"
 webui: "http://[HOST]:[PORT:7745]"
 ingress: true
 ingress_port: 7745
