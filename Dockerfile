@@ -19,7 +19,7 @@ ENV HBOX_DATABASE_SQLITE_PATH=/share/homebox/homebox.db?_pragma=busy_timeout=200
 # Using a specific version for stability in this example
 ARG HOMEBOX_VERSION=v0.18.0
 RUN mkdir -p /app && \
-    wget -O /tmp/homebox.tar.gz https://github.com/sysadminsmedia/homebox/releases/download/${HOMEBOX_VERSION}/homebox_linux_amd64.tar.gz && \
+    wget -O /tmp/homebox.tar.gz https://github.com/sysadminsmedia/homebox/releases/download/${HOMEBOX_VERSION}/homebox_Linux_x86_64.tar.gz && \
     tar -xzf /tmp/homebox.tar.gz -C /app && \
     rm /tmp/homebox.tar.gz && \
     chmod +x /app/homebox
