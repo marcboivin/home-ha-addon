@@ -18,7 +18,7 @@ ARG HOMEBOX_VERSION=v0.18.0
 RUN mkdir /app
 
 RUN wget -O /tmp/homebox.tar.gz https://github.com/sysadminsmedia/homebox/releases/download/v0.18.0/homebox_Linux_x86_64.tar.gz && \
-    tar -xzf /tmp/homebox.tar.gz /app && \
+    tar -xzf /tmp/homebox.tar.gz -C /app && \
     rm /tmp/homebox.tar.gz && \
     chmod +x /app/homebox
 
