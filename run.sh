@@ -14,6 +14,10 @@ ADMIN_USERNAME=$(bashio::config 'admin_username')
 ADMIN_PASSWORD=$(bashio::config 'admin_password')
 ADMIN_EMAIL=$(bashio::config 'admin_email')
 
+# Get Home Assistant URL for CORS
+HA_URL=$(bashio::supervisor info | jq -r '.data.homeassistant' | sed 's/^http/https/')
+HA_HTTP_URL=$(echo "$HA_URL" | sed 's/^https/http/')
+
 # Create directories if they don't exist
 mkdir -p "${STORAGE_PATH}"
 
@@ -27,6 +31,10 @@ mode: production
 server:
   host: 0.0.0.0
   port: 7745
+  cors:
+    allowedOrigins:
+      - ${HA_URL}
+      - ${HA_HTTP_URL}
 frontend:
   registration: ${ALLOW_REGISTRATION}
 database:
