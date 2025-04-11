@@ -52,6 +52,9 @@ password: ${ADMIN_PASSWORD}
 email: ${ADMIN_EMAIL}
 EOF
   
+  # Log admin user creation
+  bashio::log.info "Creating admin user configuration..."
+  
   # Start Homebox with admin user creation
   cd /app
   exec ./homebox -C "${ADMIN_CONFIG_FILE}" "${CONFIG_FILE}"
