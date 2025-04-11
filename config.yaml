@@ -1,6 +1,6 @@
 name: "Homebox"
 description: "Open-source inventory and organization system for your home"
-version: "1.0.3"
+version: "1.0.4"
 slug: "homebox"
 init: false
 arch:
@@ -13,6 +13,7 @@ url: "https://github.com/sysadminsmedia/homebox"
 webui: "http://[HOST]:[PORT:7745]"
 ingress: true
 ingress_port: 7745
+ingress_stream: true
 panel_icon: mdi:cube
 startup: application
 ports:
