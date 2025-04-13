@@ -35,6 +35,19 @@ server:
     allowedOrigins:
       - ${HA_URL}
       - ${HA_HTTP_URL}
+    allowedMethods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - OPTIONS
+    allowedHeaders:
+      - Content-Type
+      - Authorization
+      - X-Requested-With
+    exposedHeaders:
+      - Content-Length
+    allowCredentials: true
 frontend:
   registration: ${ALLOW_REGISTRATION}
 database:

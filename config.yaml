@@ -1,6 +1,6 @@
 name: "Homebox"
 description: "Open-source inventory and organization system for your home"
-version: "1.0.5"
+version: "1.0.6"
 slug: "homebox"
 init: false
 arch:
