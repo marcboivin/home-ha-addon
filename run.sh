@@ -21,6 +21,15 @@ HA_HTTP_URL=$(echo "$HA_URL" | sed 's/^https/http/')
 # Create directories if they don't exist
 mkdir -p "${STORAGE_PATH}"
 
+# Ensure database directory exists with proper permissions
+DATABASE_DIR=$(dirname "${DATABASE_PATH}")
+mkdir -p "${DATABASE_DIR}"
+chmod 755 "${DATABASE_DIR}"
+
+# Log storage locations for debugging
+bashio::log.info "Using database path: ${DATABASE_PATH}"
+bashio::log.info "Using storage path: ${STORAGE_PATH}"
+
 # Set timezone
 export TZ="${TIMEZONE}"
 
@@ -53,7 +62,7 @@ frontend:
 database:
   type: sqlite
   sqlite:
-    path: ${DATABASE_PATH}
+    path: ${DATABASE_PATH}?_pragma=busy_timeout=5000&_pragma=journal_mode=WAL&_pragma=synchronous=NORMAL&_fk=1&_time_format=sqlite
 storage:
   data: ${STORAGE_PATH}/
 assetId:

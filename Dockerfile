@@ -10,7 +10,7 @@ RUN apk add --no-cache \
 # Set environment variables
 ENV HBOX_MODE=production
 ENV HBOX_STORAGE_DATA=/share/homebox/
-ENV HBOX_DATABASE_SQLITE_PATH=/share/homebox/homebox.db?_pragma=busy_timeout=2000&_pragma=journal_mode=WAL&_fk=1&_time_format=sqlite
+ENV HBOX_DATABASE_SQLITE_PATH=/share/homebox/homebox.db?_pragma=busy_timeout=5000&_pragma=journal_mode=WAL&_pragma=synchronous=NORMAL&_fk=1&_time_format=sqlite
 
 # Download latest release of Homebox or use a specific version
 # Using a specific version for stability in this example
